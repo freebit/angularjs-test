@@ -8,9 +8,24 @@
 </navbar>
 
 <header>
-    <h1>{{ this.title }}</h1>
+    <h1 ng-bind="this.title"></h1>
+    
+    <section class="search-section" role="search">
+      <form action="" ng-submit="this.sendQuery($event)">
+        <input type="text" ng-model="this.query" placeholder="Введите имя артиста">
+        <button type="submit">search</button>
+      </form>
+    </section> 
+
+    <section class="search-info">
+      <span ng-if="this.query.length" class="caption">Вы ищите:</span>
+      <span ng-bind="this.query"></span>
+    </section>
+
 </header>
 
 <main>
-  <div></div>
+  <ul>
+    <li ng-repeat="item in this.list" ng-class="$odd ? 'odd' : 'even'"> {{ item.name }} </li>
+  </ul>
 </main>
