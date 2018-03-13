@@ -6,15 +6,13 @@ let contactsModule = angular.module('contacts', [
   uiRouter
 ])
 
-.config(($stateProvider, $urlRouterProvider) => {
-  $urlRouterProvider.otherwise('/');
-
+.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
   $stateProvider
     .state('contacts', {
       url: '/contacts',
       template: '<contacts></contacts>'
     });
-})
+}])
 
 .component('contacts', component);
 

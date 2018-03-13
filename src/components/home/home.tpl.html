@@ -11,21 +11,30 @@
     <h1 ng-bind="this.title"></h1>
     
     <section class="search-section" role="search">
-      <form action="" ng-submit="this.sendQuery($event)">
-        <input type="text" ng-model="this.query" placeholder="Введите имя артиста">
-        <button type="submit">search</button>
+      <form name="searchForm" ng-submit="this.sendQuery($event)">
+        <input type="text" ng-model="this.query" placeholder="Введите имя артиста" required>
+        <button type="submit" ng-disabled="!searchForm.$valid">search</button>
       </form>
     </section> 
 
     <section class="search-info">
-      <span ng-if="this.query.length" class="caption">Вы ищите:</span>
-      <span ng-bind="this.query"></span>
+      <span ng-show="this.query.length" class="caption">Вы ищите:</span>
+      <span ng-bind="this.query | uppercase"></span>
     </section>
 
 </header>
 
 <main>
+  <section class="filter-results" ng-show="this.list.length">
+    <div class="filter" ng-class="this.orderDesc ? 'desc' : 'asc'">
+        <span class="icon"></span><!--
+        --><span class="caption" ng-click="this.switchSortingOrder()">сортировать по названию</span>
+    </div>
+  </section>
   <ul>
-    <li ng-repeat="item in this.list" ng-class="$odd ? 'odd' : 'even'"> {{ item.name }} </li>
+    <li ng-repeat="item in list | orderBy:'name': orderDesc" ng-class="$odd ? 'odd' : 'even'">
+      <div class="name">{{ item.name }}</div>
+      <button class='delete-item' ng-click="this.removeListItem(item, $index)">&times;</button>
+    </li>
   </ul>
 </main>

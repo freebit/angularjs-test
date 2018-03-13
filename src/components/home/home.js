@@ -6,15 +6,14 @@ let homeModule = angular.module('home', [
   uiRouter
 ])
 
-.config(($stateProvider, $urlRouterProvider) => {
-  $urlRouterProvider.otherwise('/');
+.config(['$stateProvider', ($stateProvider) => {
 
   $stateProvider
     .state('home', {
       url: '/',
       template: '<home></home>'
     });
-})
+}])
 
 .component('home', homeComponent);
 

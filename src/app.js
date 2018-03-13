@@ -22,7 +22,7 @@ const AppModule = angular.module('appModule',[
 
 AppModule.config(($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) => {
   $locationProvider.html5Mode(true).hashPrefix('!');
-  //$urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/');
 });
 
 

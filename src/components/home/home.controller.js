@@ -1,6 +1,7 @@
 export default ['$scope', ($scope) => {
   $scope.title = 'Поиск артистов';
 
+  
   $scope.query = ''
 
   $scope.list = [
@@ -14,4 +15,17 @@ export default ['$scope', ($scope) => {
   $scope.sendQuery = function(evt){
     evt && evt.preventDefault();
   }
+
+  $scope.switchSortingOrder = function(){
+    this.orderDesc = !this.orderDesc;
+  }
+
+  $scope.removeListItem = function(item){
+    let currentIndex = this.list.indexOf(item);
+    this.list.splice(currentIndex, 1);
+    
+    console.log(angular.element);
+  }
+  
+  $scope.orderDesc = false;
 }]
