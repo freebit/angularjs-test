@@ -10,6 +10,8 @@ import ngAria from 'angular-aria';
 import appComponent from './components/app/app.component';
 import Components from './components/components';
 
+import './assets/styl/app.styl';
+
 const AppModule = angular.module('appModule',[
   uiRouter,
   ngResource,
@@ -25,7 +27,3 @@ AppModule.config(($stateProvider, $urlRouterProvider, $locationProvider, $httpPr
   $urlRouterProvider.otherwise('/');
 });
 
-
-
-
-AppModule.directive('app', appComponent);

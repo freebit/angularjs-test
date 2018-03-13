@@ -7,8 +7,14 @@
     <base href="/">
   </head>
   <body ng-app="appModule" ng-cloak>
-    <app>
-      Loading...
-    </app>
+      <navbar class="navbar__top">
+          <nav>
+            <ul>
+              <li><a href="/">Поиск</a></li>
+              <li><a href="/contacts">Контакты</a></li>
+            </ul>
+          </nav>
+        </navbar>
+        <div ui-view class="app"></div>
   </body>
 </html>

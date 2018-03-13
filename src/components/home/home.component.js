@@ -4,7 +4,7 @@ import controller from './home.controller';
 import './home.styl';
 
 export default {
-  restrict: 'E',
+  restrict: 'EA',
   //scope: {},
   template,
   controller,
