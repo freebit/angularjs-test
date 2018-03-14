@@ -7,7 +7,6 @@ import ngCookies from 'angular-cookies';
 
 import ngAria from 'angular-aria';
 
-import appComponent from './components/app/app.component';
 import Components from './components/components';
 
 import './assets/styl/app.styl';
@@ -27,3 +26,5 @@ AppModule.config(($stateProvider, $urlRouterProvider, $locationProvider, $httpPr
   $urlRouterProvider.otherwise('/');
 });
 
+
+AppModule.constant('apiKey', { 'Guitarparty-Api-Key':'7e45262f9ebd3812142fc442ae2656d364540960' });

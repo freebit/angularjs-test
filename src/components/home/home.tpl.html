@@ -16,6 +16,7 @@
 </header>
 
 <main>
+  <div class="no-results" ng-hide="this.list.length">Ни чего не найдено.</div>
   <section class="filter-results" ng-show="this.list.length">
     <div class="filter" ng-class="this.orderDesc ? 'desc' : 'asc'">
         <span class="icon"></span><!--
