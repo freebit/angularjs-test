@@ -1,15 +1,15 @@
-export default ['$scope', 'GuitarPartyService', ($scope, GuitarPartyService) => {
+export default ['$rootScope', '$scope', '$timeout', 'GuitarPartyService', ($rootScope, $scope, $timeout, GuitarPartyService) => {
   $scope.title = 'Поиск артистов';
 
   
   $scope.query = ''
 
   $scope.list = [
-    // {id:1, name: 'Pink Floyd'},
-    // {id:2, name: 'Genesis'},
-    // {id:3, name: 'U2'},
-    // {id:4, name: 'Kraftwerk'},
-    // {id:5, name: 'Oasis'}
+    {id:1, name: 'Pink Floyd'},
+    {id:2, name: 'Genesis'},
+    {id:3, name: 'U2'},
+    {id:4, name: 'Kraftwerk'},
+    {id:5, name: 'Oasis'}
   ];
 
   $scope.sendQuery = function(evt){
@@ -38,4 +38,9 @@ export default ['$scope', 'GuitarPartyService', ($scope, GuitarPartyService) => 
   }
   
   $scope.orderDesc = false;
+
+  // $timeout(()=>{
+  //   $scope.title = 'Поиск артистов'
+  // }, 1000)
+
 }]

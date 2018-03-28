@@ -1,3 +1,3 @@
-export default ['$scope', ($scope) => {
+export default ['$rootScope', '$scope', ($rootScope, $scope) => {
   $scope.title = 'Contacts';
 }]

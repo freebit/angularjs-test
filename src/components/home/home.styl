@@ -10,21 +10,26 @@ home
     position relative
     padding 0 16px
 
-  ul
+  ul.list__artists
     position relative
     padding 0
     list-style disc
     list-style-position inside
 
     li
+      display block
       position relative
-      display flex
-      justify-content space-between
       box-sizing border-box
       padding 5px 9px
 
       &.even
         background-color lighten(green, 9%)
+
+      
+      .wrapper
+        position relative
+        display flex
+        justify-content space-between  
 
 
       .delete-item
@@ -36,6 +41,15 @@ home
 
         background-color transparent
         cursor pointer
+
+      .bio:not(:empty)
+        position relative
+        display block
+        margin-top 16px
+        font-size .8rem
+
+        a
+          color lighten(green, 75%)
 
 
 

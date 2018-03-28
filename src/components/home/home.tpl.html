@@ -23,10 +23,13 @@
         --><span class="caption" ng-click="this.switchSortingOrder()">сортировать по названию</span>
     </div>
   </section>
-  <ul>
+  <ul class="list__artists">
     <li ng-repeat="item in list | orderBy:'name': orderDesc" ng-class="$odd ? 'odd' : 'even'">
-      <div class="name">{{ item.name }}</div>
-      <button class='delete-item' ng-click="this.removeListItem(item, $index)">&times;</button>
+      <div class="wrapper">
+        <div class="name">{{ item.name }}</div>
+        <button class='delete-item' ng-click="this.removeListItem(item, $index)">&times;</button>
+      </div>
+      <div class="bio" ng-bind-html="item.bio"></div>
     </li>
   </ul>
 </main>

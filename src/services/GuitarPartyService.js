@@ -5,10 +5,12 @@ export default ['$http', 'apiKey', function($http, apiKey){
     artists:[],
 
     getArtists(query){
+      const queryStr = query.split(' ').join('+');
+      
       return $http({
         method: 'GET',
         headers: apiKey,
-        url: `http://api.guitarparty.com/v2/artists/?query=${ query.split(' ').join('+') }`
+        url: `http://api.guitarparty.com/v2/artists/?query=${ queryStr }`
       });
     }
 

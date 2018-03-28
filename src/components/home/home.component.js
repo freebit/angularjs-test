@@ -7,6 +7,6 @@ export default {
   template,
   controller,
   bindings:{
-    data: '<'
+    data: '=data'
   }
 }

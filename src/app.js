@@ -5,6 +5,8 @@ import ngResource from 'angular-resource';
 import ngSanitize from 'angular-sanitize';
 import ngCookies from 'angular-cookies';
 
+import ngAnimate from 'angular-animate';
+
 import ngAria from 'angular-aria';
 
 import Components from './components/components';
@@ -16,7 +18,8 @@ const AppModule = angular.module('appModule',[
   ngResource,
   ngSanitize,
   ngCookies,
-
+  ngAnimate,
+  
   Components.name
 ]);
 
